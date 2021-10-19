@@ -1,0 +1,77 @@
+/*-------------------------------------------------------------- ABOUT US ESTILOS ----------------------------------------------------------------*/
+
+.AboutUs{
+    
+    .AboutHeader{
+        img{
+            @include volumen(100%, 100%);
+            @media(min-width: 600px){
+                @include volumen(100%, 100%);
+            }
+            @media(min-width: 1200px){
+                @include volumen(100%, 600px);
+            }
+        }
+    }
+
+    .AboutBody{
+        #ImgHistory{
+            @include volumen(100%, 100%);
+            @media(min-width: 600px){
+                @include volumen(100%, 100%);
+            }
+            @media(min-width: 1200px){
+                @include volumen(100%, 350px);
+            }
+        }
+        .Info{
+            text-align: center;
+            @include relleno(20px, 20px, 20px, 20px);
+
+            .RightText{
+                @media(min-width: 800px){
+                    text-align: right;
+                }
+            }
+            .LeftText{
+                @media(min-width: 800px){
+                    text-align: left;
+                }
+            }
+            hr{
+                color: $colornegro;
+                background-color: $colornegro;
+                @include volumen(65%, 3px);
+            }
+        }
+
+        .Bars{
+            background-color: $colorgrisclaro;
+            @include relleno(25px, 25px, 20px, 20px);
+
+            h3{
+                font-family: $fuentetexto;
+            }
+        }
+
+        h1{
+            text-align: center;
+            padding-top: 45px;
+        }
+
+        .History{
+            text-align: center;
+            border: $colorgrisoscuro 1px solid;
+            @include relleno(15px, 15px, 5px, 5px);
+            @include margen(20px, 20px, 5px, 5px);
+        }
+
+        .AboutAdvertisement{
+            text-align: center;
+            @include volumen(250px, 125px);
+            @extend %imagen-centrada;
+        }
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/

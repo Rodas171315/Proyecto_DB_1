@@ -1,0 +1,45 @@
+/*-------------------------------------------------------------- CONTACTO ESTILOS ----------------------------------------------------------------*/
+
+.ContactForm{
+    #ContactVideo{
+        position: fixed;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        @include transformar(-50%, -50%);
+    }
+
+    .ContactBody{
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        @include relleno(12px, 12px, 10px, 10px);
+        @media(min-width: 600px){
+            @include relleno(18px, 18px, 15px, 15px);
+        }
+        @media(min-width: 1200px){
+            @include relleno(30px, 30px, 25px, 25px);
+        }
+        
+        hr{
+            color: $colornegro;
+            background-color: $colornegro;
+            @include volumen(auto, 4px);
+        }
+
+       .icon{
+           @include volumen(25px, 25px);
+       } 
+
+       .ContactAdvertisement{
+            margin-top: 50px;
+            text-align: center;
+            @include volumen(250px, 125px);
+            @extend %imagen-centrada;
+       }
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/

@@ -1,0 +1,27 @@
+// Mixins
+@mixin transformar($x, $y){
+    -webkit-transform: translateX($x) translateY($y);
+    -moz-transform: translateX($x) translateY($y);
+    -ms-transform: translateX($x) translateY($y);
+    -o-transform: translateX($x) translateY($y);
+    transform: translateX($x) translateY($y);
+}
+
+@mixin relleno($top, $bot, $right, $left) {
+    padding-top: $top;
+    padding-bottom: $bot;
+    padding-right: $right;
+    padding-left: $left;
+}
+
+@mixin margen($top, $bot, $right, $left) {
+    margin-top: $top;
+    margin-bottom: $bot;
+    margin-right: $right;
+    margin-left: $left;
+}
+
+@mixin volumen($ancho, $altura){
+    width: $ancho;
+    height: $altura;
+}

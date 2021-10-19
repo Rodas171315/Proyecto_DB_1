@@ -1,0 +1,107 @@
+.container {
+    position: relative;
+    width: 83%;
+
+    &:hover {
+        .overlay {
+            opacity: 1;
+        }
+    }
+}
+
+.overlay {
+    @extend %overlay;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #aa1b1b;
+}
+
+.text {
+    color: $colorblanco;
+    text-align: center;
+    font-size: 14px;
+}
+
+#Destacadas {
+    padding: 1px;
+}
+
+#buscadas {
+    @include volumen(100%, 300px);
+    display: block;
+    padding: 10px;
+}
+
+#descripcionNoticia {
+    height: 200px;
+}
+
+#descripcionMiniatura {
+    height: 100px;
+}
+
+#carrousel {
+    background-color: #996767;
+}
+
+#articleTitle {
+    text-align: center;
+}
+
+#sub {
+    color: $colorgrisoscuro;
+    font-size: 120%;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+}
+
+#nike {
+    @include volumen(100%, 7%);
+}
+
+#descripcion {
+    text-align: left;
+}
+
+#user {
+    width: 7%;
+}
+
+#ad {
+    padding-left: 10%;
+    width: 32%;
+}
+
+#comments {
+    background-color: #996767;
+}
+
+#switchAd {
+    width: 70%;
+}
+
+#artDest {
+    width: 100%;
+
+}
+
+/*
+#background{
+background-image: url("../images/Wallpaper.jpg");  
+}
+*/
+
+#banner {
+    @include volumen(100%, 20px);
+}
+
+#listados {
+    background-color: $colorgrisclaro;
+}
+
+#censurados {
+    color: $colorrojo;
+}
