@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto DB 1</title>
-</head>
-<body>
+<a href="registro_vacuna.php">Regresar</a>
+
 <?php
     
     require("conexionDB.php");
 
     // Variables para realizar el query de registro, obteniendo datos del formulario.
-    $id_dv=$_GET["id_dv"];
-    $nombre_vac=$_GET["nombre_vac"];
+    $id_vacuna=$_GET["id_vacuna"];
+    $vacuna=$_GET["vacuna"];
     $marca=$_GET["marca"];
     $cant_dosis=$_GET["cant_dosis"];
     $dias_dosis=$_GET["dias_dosis"];
 
     // Query para manipular la base de datos.
-    $consulta="INSERT INTO `datos_vacuna` (`id_dv`, `nombre_vac`, `marca`, `cant_dosis`, `dias_dosis`) VALUES ('$id_dv', '$nombre_vac', '$marca', '$cant_dosis', '$dias_dosis')";
+    $consulta="INSERT INTO `vacunas` (`id_vacuna`, `vacuna`, `marca`, `cant_dosis`, `dias_dosis`) VALUES ('$id_vacuna', '$vacuna', '$marca', $cant_dosis, $dias_dosis)";
 
     // Obtiene los resultados del query.
     $resultados=mysqli_query($conexion,$consulta);
@@ -32,16 +25,10 @@
     else
     { 
         echo "<br>La vacuna se ha registrado correctamente.<br>";
-        
-        //require("busqueda_global.php");
-        //busqueda_global($nombre_vac);
-        
-        //header("location:login.php");
+        header("location:registro_vacuna.php");
     }
 
     // Cierra la conexion con la base de datos.
     mysqli_close($conexion);
 
 ?>
-</body>
-</html>

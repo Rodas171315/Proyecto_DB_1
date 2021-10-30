@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head><title>Usuario Registrado</title></head>
+<head><title>Importar Personas</title></head>
 <?php require("head.php"); ?>
 
 <body>
 <?php require("reanudar_sesion.php"); ?>
 <?php require("headerlogged.php"); ?>
-<?php require("headerUser.php"); ?>
+<?php require("headerAdmin.php"); ?>
 
 
 <br>
-<hr id="mis_datos">
-<h1 id="h1form">Mis datos</h1>
+<hr>
+<h1 id="h1form">Importar Personas Masivamente</h1>
 <hr>
 <br>
 
+<form action="importar_archivo.php" method="POST" enctype="multipart/form-data">
+<div class="file-input text-center">
+<input type="file" name="Data_Personas" id="file-input" class="file-input__input" accept=".csv"/>
+<label class="file-input__label" for="file-input">
+<i class="zmdi zmdi-upload zmdi-hc-2x"></i>
+<span>Elegir Archivo (*.csv)</span></label>
+</div>
+<div class="text-center mt-5">
+<input type="submit" name="subir" class="btn-enviar" value="Importar"/>
+</div>
+</form>
+<br><br>
+
 <?php
+header("Content-Type: text/html;charset=utf-8");
 require('conexionDB.php');
-$cui=$_SESSION["usuario"];
-$sqlPersonas = ("SELECT * FROM `vista_personas` WHERE `cui`=$cui");
+$sqlPersonas = ("SELECT * FROM `vista_personas` ORDER BY `cui` ASC");
 $queryData   = mysqli_query($conexion, $sqlPersonas);
+$total_personas = mysqli_num_rows($queryData);
 ?>
+
+<h6 id="h6form" class="text-center">
+Lista de Personas <strong>(<?php echo $total_personas; ?>)</strong>
+</h6>
 
 <table class="table table-bordered table-striped">
 <thead>
@@ -50,6 +68,7 @@ while ($data = mysqli_fetch_array($queryData)) { ?>
 <?php } ?>
 </tbody>
 </table>
+
 
 <?php require("footer.php"); ?>
 <?php require("scripts.php"); ?>

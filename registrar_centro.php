@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto DB 1</title>
-</head>
-<body>
+<a href="registro_centro.php">Regresar</a>
+
 <?php
     
     require("conexionDB.php");
 
     // Variables para realizar el query de registro, obteniendo datos del formulario.
     $id_centro=$_GET["id_centro"];
-    $nombre=$_GET["nombre"];
+    $centro=$_GET["nombre"];
     $direccion=$_GET["direccion"];
+    $cant_vacunas=$_GET["cant_vacunas"];
 
     // Query para manipular la base de datos.
-    $consulta="INSERT INTO `centros_vacuna` (`id_centro`, `nombre`, `direccion`) VALUES ('$id_centro', '$nombre', '$direccion')";
+    $consulta="INSERT INTO `centros_vacunacion` (`id_centro`, `centro`, `direccion`, `cant_vacunas`) VALUES ('$id_centro', '$centro', '$direccion', $cant_vacunas)";
 
     // Obtiene los resultados del query.
     $resultados=mysqli_query($conexion,$consulta);
@@ -30,16 +24,10 @@
     else
     { 
         echo "<br>El centro de vacunacion se ha registrado correctamente.<br>";
-        
-        //require("busqueda_global.php");
-        //busqueda_global($id_centro);
-        
-        //header("location:login.php");
+        header("location:registro_centro.php");
     }
 
     // Cierra la conexion con la base de datos.
     mysqli_close($conexion);
 
 ?>
-</body>
-</html>

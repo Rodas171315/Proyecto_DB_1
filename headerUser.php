@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head><title>Home</title></head>
-<?php require("head.php"); ?>
-
-<body>
-<?php require("header.php"); ?>
-
-<div class="cargando">
-    <div class="loader-outter"></div>
-    <div class="loader-inner"></div>
-</div>
-
 <section>
     <div class="grid-x">
         <div class="cell large-12">
@@ -27,10 +14,10 @@
 <div class="top-bar" id="example-menu">
     <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-        <li id="headerWhite" class="menu-text">Perfiles</li>
-        <li><a id="headerWhite" href="userView.php">Cliente</a></li>
-        <li><a id="headerWhite" href="empView.php">Empleado</a></li>
-        <li><a id="headerWhite" href="adminView.php">Admin</a></li>
+        <li id="headerWhite" class="menu-text">Opciones</li>
+        <li><a id="headerWhite" href="#mis_datos">Ver mis datos</a></li>
+        <li><a id="headerWhite" href="#0">Proceso de Vacunacion</a></li>
+        <li><a id="headerWhite" href="#0">Comprobante PDF</a></li>
     </ul>
     </div>
     <div class="top-bar-right">
@@ -42,9 +29,7 @@
 </div>
 <br>
 
-<h1>Inserte contenido aqui!</h1>
-
-<?php require("footer.php"); ?>
-<?php require("scripts.php"); ?>
-</body>
-</html>
+<div class="cargando">
+    <div class="loader-outter"></div>
+    <div class="loader-inner"></div>
+</div>

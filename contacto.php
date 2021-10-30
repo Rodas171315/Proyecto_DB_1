@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <br>
-                <form data-abide novalidate>
+                <form data-abide novalidate action="enviar_correo.php" method="post">
                     <div class="grid-x grid-margin-x">
                         <div class="cell">
                             <div data-abide-error class="alert callout" style="display: none;">
@@ -72,27 +72,27 @@
                     </div>
                     <div class="grid-x grid-margin-x">
                         <div class="cell large-6">
-                            <label>
-                                <input type="text" placeholder="Nombre o Usuario" aria-describedby="exampleHelpTex" required>
+                            <label for="usuario">
+                                <input type="text" name="usuario" id="usuario" placeholder="Nombre o Usuario" aria-describedby="exampleHelpTex" required>
                             </label>
                             <p class="help-text" id="exampleHelpTex">Nombre y apellido o nombre de usuario</p>
                         </div>
                         <div class="cell large-6">
-                            <label>
-                                <input type="text" placeholder="Correo Electronico" aria-describedby="exampleHelpTex" required>
+                            <label for="email">
+                                <input type="text" name="email" id="email" placeholder="Correo Electronico" aria-describedby="exampleHelpTex" required pattern="email">
                             </label>
-                            <p class="help-text" id="exampleHelpTex">user@email.com</p>
+                            <p class="help-text" id="exampleHelpTex">sucorreo@ejemplo.com</p>
                         </div>
                     </div>
                     <div class="grid-x grid-margin-x">
                         <div class="cell large-12">
-                            <label>
-                                <input type="text" placeholder="Asunto" required>
+                            <label for="asunto">
+                                <input type="text" name="asunto" id="asunto" placeholder="Asunto" required>
                             </label>
                         </div>
                         <div class="cell large-12">
-                            <label>
-                                <textarea placeholder="Mensaje" required></textarea>
+                            <label for="mensaje">
+                                <textarea name="mensaje" id="mensaje" placeholder="Mensaje" required></textarea>
                             </label>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                             <button class="button" type="reset" value="Limpiar">Limpiar</button>
                         </fieldset>
                         <fieldset class="cell small-5 medium-4 large-3">
-                            <button class="button" type="submit" value="Enviar">Enviar Mensaje</button>
+                            <button class="button" type="submit" name="enviar" id="enviar" value="Enviar">Enviar Mensaje</button>
                         </fieldset>
                     </div>
                 </form>
@@ -118,15 +118,6 @@
 </section>
 
 <?php require("footer.php"); ?>
-<script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/what-input.js"></script>
-<script src="js/vendor/foundation.js"></script>
-<script src="js/app.js"></script>
-<script src="js/styleImport.js"></script>
-<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-<script>
-    $(document).foundation();
-</script>
-
+<?php require("scripts.php"); ?>
 </body>
 </html>

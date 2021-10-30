@@ -545,7 +545,70 @@ a {
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------ SUBCATEGORIA X ESTILOS ------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------ SUBCATEGORIA Y ESTILOS ------------------------------------------------------------*/
+/*------------------------------------------------------------- COMPONENTES GLOBALES -------------------------------------------------------------*/
+.cargando {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f7f7f7;
+  z-index: 999999;
+}
+.cargando .loader-inner {
+  position: absolute;
+  border: 2px solid #f50136;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  border-right: 0;
+  border-top-color: transparent;
+  -webkit-animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+  animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+@-webkit-keyframes loader-outter {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-outter {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader-inner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@keyframes loader-inner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------- ABOUT US ESTILOS ----------------------------------------------------------------*/
 .AboutUs .AboutHeader img {
@@ -691,6 +754,9 @@ a {
   width: 250px;
   height: 125px;
 }
+#Fcontact{
+  color: #0b7dda;
+}
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------- USERS ESTILOS -----------------------------------------------------------------*/
@@ -762,15 +828,25 @@ a {
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------- FORMULARIOS DE REGISTRO ------------------------------------------------------------*/
+/*----------------------------------------------------------------- FORMULARIOS ------------------------------------------------------------------*/
 #h1form {
   text-align:center;
 }
 
 #tableform {
-  width: 30%;
+  width: 80%;
   border: 2px solid black;
   margin: auto;
+}
+@media (min-width: 600px) {
+  #tableform {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #tableform {
+    width: 30%;
+  }
 }
 
 #tdform {
@@ -779,8 +855,18 @@ a {
 }
 
 #alertform {
-  width: 45%;
+  width: 90%;
   margin: auto;
+}
+@media (min-width: 600px) {
+  #alertform {
+    width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  #alertform {
+    width: 45%;
+  }
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -801,33 +887,67 @@ a {
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------- IMPORTAR PERSONAS ADMIN ------------------------------------------------------------*/
+.zmdi-upload{
+  padding: 0px 15px 0px 0px;
+}
+.zmdi-upload:hover{
+  color: black;
+  transition: color 0.2s linear 0.2s;
+}
+
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 12px;
+  background-color: #4245a8;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+.file-input__label:hover{
+  color: #333;
+}
+
+.btn-enviar{
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 45px;
+  background-color: green;
+  border: none;
+  border-radius: 2px;
+}
+.btn-enviar:hover{
+  color: #333;
+}
+
+#h6form{
+  color:#333; 
+  background-color: #cecece; 
+  padding: 10px 0px;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------- LOGIN y REGISTRO ESTILOS -----------------------------------------------------------*/
-#h1login {
-  text-align:center;
-}
-
-#tablelogin {
-  width: 30%;
-  border: 2px solid black;
-  margin: auto;
-}
-
-#tdlogin {
-  text-align: center;
-  padding: 10px;
-}
-
 .izqlogin {
   text-align: right;
 }
 
 .derlogin {
   text-align: right;
-}
-
-#alertlogin {
-  width: 45%;
-  margin: auto;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -869,10 +989,6 @@ a {
   padding-bottom: 14px;
   padding-right: 8px;
   padding-left: 8px;
-}
-
-#Fcontact {
-  color: #2ba6cb;
 }
 
 .FooterBot {

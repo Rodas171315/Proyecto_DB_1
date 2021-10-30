@@ -1,5 +1,4 @@
 <?php
-
     try
     {
         // Conexion a la base de datos por PDO.
@@ -12,5 +11,4 @@
         die("Error" . $e->getMessage());
         echo "Linea del error" . $e->getLine();
     }
-
 ?>

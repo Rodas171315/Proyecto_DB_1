@@ -1,35 +1,72 @@
+<a href="registro.php">Regresar</a>
+
 <?php
     
     require("conexionDB.php");
 
-    // Variables para realizar el query de registro, obteniendo datos del formulario.
-    $id_du=$_GET["id_user"];
-    $dpi=$_GET["dpi"];
+    // Variables para realizar la comprobacion y registro, obteniendo datos del formulario.
+    $cui=$_GET["cui"];
     $contra=$_GET["contra"];
-    $perfil=$_GET["perfil"];
+    $telefono=$_GET["telefono"];
+    $email=$_GET["email"];
+    $id_centro=$_GET["centro"];
+
+    date_default_timezone_set("America/Guatemala");
+    $fecha = date("Ymd");
+    $id_seguimiento = $fecha.$cui;
 
     // Query para manipular la base de datos.
-    $consulta="INSERT INTO `usuarios` (`id_usuario`, `dpi`, `contra`, `perfil`) VALUES ('$id_du', '$dpi', '$contra', '$perfil')";
+    $consulta_apto = ("SELECT `Habilitado` FROM `personas_habilitadas` WHERE `CUI`='$cui'");
 
     // Obtiene los resultados del query.
-    $resultados=mysqli_query($conexion,$consulta);
+    $resultados_apto = mysqli_query($conexion,$consulta_apto);
+    $total_apto = mysqli_num_rows($resultados_apto);
 
-    // Cierra la conexion con la base de datos.
-    mysqli_close($conexion);
-
-    // Verifica si se ha realizado el registro.
-    if($resultados==false)
+    // Verifica si se encuentra la persona habilitada.
+    if($resultados_apto==false || $total_apto==0)
     {
-        echo "<br>Error al registrar el usuario.<br>";
+        // Cierra la conexion con la base de datos.
+        mysqli_close($conexion);
+
+        echo "<br>Error! La persona no se encuentra habilitada para poder registrarse.<br>";
+        // Reubica en el home
+        //header("location:index.php");
     }
     else
-    { 
-        echo "<br>El usuario se ha registrado correctamente.<br>";
-        
-        require("busqueda_usuario.php");
-        busqueda_usuario($dpi);
-        
-        //header("location:login.php");
+    {
+        $consulta_check = ("SELECT `Registrado` FROM `personas_registradas` WHERE `CUI`='$cui'");
+        $resultados_check = mysqli_query($conexion,$consulta_check);
+        $total_check = mysqli_num_rows($resultados_check);
+
+        // Verifica si ya se encuentra la persona registrada.
+        if($resultados_check==false || $total_check==0)
+        {
+            $consulta_insert = ("CALL CREAR_USUARIOS($cui,'$contra',$telefono,'$email',$id_centro,'$id_seguimiento')");
+            $resultados_insert = mysqli_query($conexion,$consulta_insert);
+
+            mysqli_close($conexion);
+
+            // Verifica si se ha realizado el registro.
+            if($resultados_insert==false)
+            {
+                echo "<br>Error al registrar el usuario.<br>";
+                // Reubica en el registro de usuario
+                //header("location:registro.php");
+            }
+            else
+            { 
+                echo "<br>En hora buena! La persona se ha registrado correctamente.<br>";
+                // Reubica en el inicio de sesion
+                //header("location:login.php");
+            }
+        }
+        else
+        {
+            mysqli_close($conexion);
+            echo "<br>Error! La persona ya se encuentra registrada.<br>";
+            // Reubica en el inicio de sesion
+            //header("location:login.php");
+        }
     }
-    
+
 ?>
