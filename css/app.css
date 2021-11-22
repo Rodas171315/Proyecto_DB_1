@@ -869,6 +869,27 @@ a {
   }
 }
 
+#calloutform {
+  font-family: 'Tahoma';
+  text-align: center;
+  border: solid 2px;
+  border-radius: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+@media (min-width: 600px) {
+  #calloutform {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  #calloutform {
+    margin-right: 75px;
+    margin-left: 75px;
+  }
+}
+
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------- VISTA INTERFAZ DE EMPLEADO ----------------------------------------------------------*/
 #h1empView {

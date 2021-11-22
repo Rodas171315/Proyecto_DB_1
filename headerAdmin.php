@@ -23,7 +23,13 @@
                 <li><a id="headerWhite" href="actualizar.php">Actualizar Masivamente</a></li>
             </ul>
         </li>
-        <li><a id="headerWhite" href="crud_usuarios.php">CRUD Usuarios</a></li>
+        <li class="has-submenu">
+            <a id="headerWhite" href="crud.php">CRUD</a>
+            <ul class="submenu menu vertical" data-submenu>
+                <li><a id="headerWhite" href="crud.php#crud_personas">Personas</a></li>
+                <li><a id="headerWhite" href="crud.php#crud_usuarios">Usuarios</a></li>
+            </ul>
+        </li>
         <li><a id="headerWhite" href="registro_centro.php">Centros de Vacunacion</a></li>
         <li><a id="headerWhite" href="registro_vacuna.php">Catalogo de Vacunas</a></li>
         <li><a id="headerWhite" href="reportes.php">Reportes</a></li>

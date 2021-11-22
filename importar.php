@@ -29,7 +29,6 @@
 <br><br>
 
 <?php
-header("Content-Type: text/html;charset=utf-8");
 require('conexionDB.php');
 $sqlPersonas = ("SELECT * FROM `vista_personas` ORDER BY `cui` ASC");
 $queryData   = mysqli_query($conexion, $sqlPersonas);

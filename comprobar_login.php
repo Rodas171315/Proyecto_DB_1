@@ -27,6 +27,7 @@
             // Crea una sesion y alberga su CUI como usuario.
             session_start();
             $_SESSION["usuario"]=$_POST["login"];
+            $_SESSION["perfil"]=$i;
             
             switch ($i) {
                 case 0:

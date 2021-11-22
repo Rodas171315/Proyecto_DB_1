@@ -9,7 +9,7 @@
     $usuario=$_POST["usuario"];
     $asunto=$_POST["asunto"];
     $mensaje=$_POST["mensaje"];
-    $mensaje.=" Att.: $usuario.";
+    $mensaje.="\r\n Att.: $usuario.";
     $headers="MIME-Version: 1.0\r\n";
     $headers.="Context-type: text/html; charset=utf8\r\n";
     $headers.="From: Sistema Proyecto DB < no-reply@proyectodb.com >\r\n";

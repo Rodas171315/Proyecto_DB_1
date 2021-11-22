@@ -55,9 +55,10 @@
             }
             else
             { 
+                ConfirmarRegistro($cui,$telefono,$email,$id_centro);
                 echo "<br>En hora buena! La persona se ha registrado correctamente.<br>";
                 // Reubica en el inicio de sesion
-                //header("location:login.php");
+                header("location:login.php");
             }
         }
         else
@@ -68,5 +69,26 @@
             //header("location:login.php");
         }
     }
-
+    
+    function ConfirmarRegistro($cui,$telefono,$email,$id_centro){
+        $destinatario = $email; // Receptor
+        $decorreo = ""; // Emisor
+        $usuario = $cui;
+        $asunto = "Usuario creado correctamente en Proyecto DB.";
+        $mensaje = "Tus datos -> CUI: $usuario, Telefono: $telefono, Email: $email, Centro de Vacunacion No.: $id_centro.";
+        $mensaje .= "\r\n Att.: $usuario.";
+        $headers = "MIME-Version: 1.0\r\n";
+        $headers .= "Context-type: text/html; charset=utf8\r\n";
+        $headers .= "From: Sistema Proyecto DB < no-reply@proyectodb.com >\r\n";
+    
+        $exito=mail($destinatario,$asunto,$mensaje,$headers);
+        // $exito=mail($destinatario,$asunto,$mensaje,$decorreo,$headers);
+    
+        if($exito){
+            echo "Mensaje enviado exitosamente.";
+        }
+        else{
+            echo "Error!";
+        }
+    }
 ?>

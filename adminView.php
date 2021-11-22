@@ -8,7 +8,6 @@
 <?php require("headerlogged.php"); ?>
 <?php require("headerAdmin.php"); ?>
 
-
 <h1>Inserte contenido aqui!</h1>
 
 <?php require("footer.php"); ?>

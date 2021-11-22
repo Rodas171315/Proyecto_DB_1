@@ -36,8 +36,8 @@ foreach ($lineas as $linea) {
 
         //No existen registros duplicados, Ingresa los nuevos registros
         if ( $cant_duplicidad == 0 ) { 
-            $insertarData = "CALL CREAR_PERSONAS($cui,'$primer_nombre','$segundo_nombre','$tercer_nombre','$primer_apellido','$segundo_apellido','$fecha_nacimiento',$id_sexo,$id_oficio,$id_enfermedad)";
-            mysqli_query($conexion, $insertarData);   
+            $insertarData = ("CALL CREAR_PERSONAS($cui,'$primer_nombre','$segundo_nombre','$tercer_nombre','$primer_apellido','$segundo_apellido','$fecha_nacimiento',$id_sexo,$id_oficio,$id_enfermedad)");
+            $result_insert = mysqli_query($conexion, $insertarData);   
         } 
         //Caso contrario, Actualiza los registros ya existentes
         else{

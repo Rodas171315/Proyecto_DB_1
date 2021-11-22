@@ -16,8 +16,8 @@
     <ul class="dropdown menu" data-dropdown-menu>
         <li id="headerWhite" class="menu-text">Opciones</li>
         <li><a id="headerWhite" href="#mis_datos">Ver mis datos</a></li>
-        <li><a id="headerWhite" href="#0">Proceso de Vacunacion</a></li>
-        <li><a id="headerWhite" href="#0">Comprobante PDF</a></li>
+        <li><a id="headerWhite" href="#mi_seguimiento">Proceso de Vacunacion</a></li>
+        <li><a id="headerWhite" href="#comprobante">Comprobante PDF</a></li>
     </ul>
     </div>
     <div class="top-bar-right">

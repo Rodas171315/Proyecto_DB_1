@@ -15,8 +15,15 @@
     <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
         <li id="headerWhite" class="menu-text">Opciones</li>
-        <li><a id="headerWhite" href="#h1empView">Buscar Usuarios</a></li>
-        <li><a id="headerWhite" href="crud_usuarios.php">CRUD Usuarios</a></li>
+        <li><a id="headerWhite" href="empView.php">Buscar Usuarios</a></li>
+        <li><a id="headerWhite" href="validar_comprobante.php">Validar Comprobante</a></li>
+        <li class="has-submenu">
+            <a id="headerWhite" href="crud.php">CRUD</a>
+            <ul class="submenu menu vertical" data-submenu>
+                <li><a id="headerWhite" href="crud.php#crud_personas">Personas</a></li>
+                <li><a id="headerWhite" href="crud.php#crud_usuarios">Usuarios</a></li>
+            </ul>
+        </li>
     </ul>
     </div>
     <div class="top-bar-right">
